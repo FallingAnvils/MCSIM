@@ -8,9 +8,7 @@
         public string JavaArgs;
         public ServerType ServerType;
         public InstallType InstallType;
-        public string ModpackUrl;
-        public string BukkitUrl;
-        public string BedrockUrl;
+        public string Url;
         public string[] Ops;
         public string[] Whitelisted;
         public int Port = 25565;

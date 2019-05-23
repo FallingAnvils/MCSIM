@@ -45,13 +45,13 @@ namespace mcmpgen
                     switch(aobj.InstallType)
                     {
                         case InstallType.Update:
-                            ModpackUpdateProcess(aobj.InstancesPath, aobj.InstanceName, aobj.ModpackUrl, aobj.ExcludedFiles);
+                            ModpackUpdateProcess(aobj.InstancesPath, aobj.InstanceName, aobj.Url, aobj.ExcludedFiles);
                             break;
                         default:
                             ModpackInstallProcess(
                                 aobj.InstancesPath,
                                 aobj.InstanceName,
-                                aobj.ModpackUrl,
+                                aobj.Url,
                                 aobj.RamMB,
                                 aobj.Ops,
                                 aobj.Whitelisted,
@@ -75,7 +75,7 @@ namespace mcmpgen
                                     SpigotBuildToolsUpdateProcess(aobj.InstanceName, aobj.InstancesPath, "https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/BuildTools.jar", aobj.Version);
                                     break;
                                 case SpigotType.DirectDownload:
-                                    SpigotDirectDownloadUpdateProcess(aobj.InstanceName, aobj.InstancesPath, aobj.BukkitUrl);
+                                    SpigotDirectDownloadUpdateProcess(aobj.InstanceName, aobj.InstancesPath, aobj.Url);
                                     break;
                             }
                             break;
@@ -103,7 +103,7 @@ namespace mcmpgen
                                     SpigotDirectDownloadInstallProcess(
                                         aobj.InstancesPath,
                                         aobj.InstanceName,
-                                        aobj.BukkitUrl,
+                                        aobj.Url,
                                         aobj.RamMB,
                                         aobj.Ops,
                                         aobj.Whitelisted,
@@ -129,7 +129,7 @@ namespace mcmpgen
                             BedrockInstallProcess(
                                 aobj.InstancesPath,
                                 aobj.InstanceName,
-                                aobj.BedrockUrl,
+                                aobj.Url,
                                 aobj.Whitelisted,
                                 aobj.Port,
                                 aobj.LevelName,
